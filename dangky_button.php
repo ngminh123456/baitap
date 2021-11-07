@@ -1,24 +1,25 @@
 <?php
-include 'config.php'
-if( isset($_POST["sumbit"]) && $_POST["username"] != '' && $_POST["password'"] != ''&& $_POST["repassword"] != '' ){
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $repassword = $_POST["repassword"];
+include 'config.php';
+if( isset($_POST["button"]) ){
+    $phone = $_POST["phone"];
+    $hoten = $_POST["hoten"];
+    $matkhau = $_POST["matkhau"];
+    $nhaplaimatkhau = $_POST["nhaplaimatkhau"];
     $level=0;
-    if(($username == ""|| $password=="" || $repassword==""){
+    if($phone == ""|| $matkhau=="" || $nhaplaimatkhau==""){
         echo'<p>Bạn cần nhập đầy đủ thông tin</p>'
     }
     else{
-        if( $password != $repassword){
+        if( $matkhau != $nhaplaimatkhau){
             echo'<p>Mật khẩu không đúng</p>'
          }
-         $sql = "SELECT * FORM user WHERE username= '$username' ";
+         $sql = "SELECT * FORM user WHERE phone= '$phone' ";
          $old = mysqli_query($conn,$sql);
-         $password = md5($password);
+         $matkhau = md5($matkhau);
          if( mysqli_num_rows($old) > 0 ) {
              echo'<p>Số điện thoại đã tồn tại</p>';
          }
-         $sql = "INSERT INTO user ( username,password,level) VALUE ('$username','$password','$level') ";
+         $sql = "INSERT INTO user ( phone,matkhau,level) VALUE ('$phone','$matkhau','$level') ";
          mysqli_query($conn,$sql);
          echo "Đã đăng ký thành công"
     }
