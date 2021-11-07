@@ -11,8 +11,9 @@ if( isset($_POST["button"]) ){
     }
     else{
         if( $matkhau != $nhaplaimatkhau){
-            echo '<p>Mật khẩu không đúng</p>';
+            echo '<p>Mật khẩu không không trùng khớp</p>';
          }
+         else{
          $sql = "select * from user where  phone = '$phone'";
          $old = mysqli_query($connect,$sql);
          $matkhaudamahoa = md5($matkhau);
@@ -20,10 +21,13 @@ if( isset($_POST["button"]) ){
          if( mysqli_num_rows($old) > 0 ) {
              echo '<p>Số điện thoại đã tồn tại</p>';
          }
-         $sql = "INSERT INTO user ( phone,matkhau,level) VALUE ('$phone',' $matkhaudamahoa','$level') ";
-         mysqli_query($connect,$sql);
-         echo "Đã đăng ký thành công";
+         else{
+            $sql = "INSERT INTO user ( phone,hoten,matkhau,level) VALUE ('$phone','$hoten',' $matkhaudamahoa','$level') ";
+            mysqli_query($connect,$sql);
+            echo "Đã đăng ký thành công";
+         }
     }
+}
 }
 else {
     echo '<p>Không thể đăng ký</p>';

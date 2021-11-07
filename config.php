@@ -21,7 +21,7 @@ if ($connect->connect_error) {
     exit('Kết nối không thành công. chi tiết lỗi:' . $connect->connect_error);
 }
 // thành công
-echo 'Kết nối thành công!';
+// echo 'Kết nối thành công!';
 ?>
 <!-- http://localhost:81/baitaplon/config.php -->
 <!-- http://localhost:81/baitaplon/dangky.php -->

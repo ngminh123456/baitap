@@ -22,16 +22,16 @@
                 <h1>ĐĂNG KÝ</h1>
                 <div class="form-text">
                     <!-- id trùng name -->
-                    <input value="123456" id="phone" type="tel" placeholder="Số điện thoại" name="phone">
+                    <input  id="phone" type="tel" placeholder="Số điện thoại" name="phone">
                 </div>
                 <div class="form-text">
-                    <input value="123456" id="hoten" type="text" placeholder="Họ tên" name="hoten">
+                    <input  id="hoten" type="text" placeholder="Họ tên" name="hoten">
                 </div>
                 <div class="form-text">
-                    <input value="123456" id="matkhau" type="password" placeholder="Mật Khẩu" name="matkhau" >
+                    <input  id="matkhau" type="password" placeholder="Mật Khẩu" name="matkhau" >
                 </div>
                 <div class="form-text">
-                    <input value="123456" id="nhaplaimatkhau" type="password" placeholder="Nhập lại mật Khẩu" name="nhaplaimatkhau">
+                    <input  id="nhaplaimatkhau" type="password" placeholder="Nhập lại mật Khẩu" name="nhaplaimatkhau">
                 </div>
                 <button  type="sumbit"  class="button" name="button">ĐĂNG KÝ</button>
             </div>
